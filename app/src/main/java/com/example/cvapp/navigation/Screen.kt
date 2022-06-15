@@ -4,10 +4,12 @@ const val NAV_GRAPH_ROUTE = "nav_root"
 const val HOME_GRAPH_ROUTE = "home_root"
 const val CV_GRAPH_ROUTE = "cv_root"
 const val CONTACT_GRAPH_ROUTE = "contact_root"
+const val PROJECTS_GRAPH_ROUTE = "projects_root"
 
 sealed class Screen(val route: String) {
     object Home : Screen(route = "home_screen")
     object Contact : Screen(route = "contact_screen")
+    object Projects : Screen(route = "projects_screen")
 
     object Cv : Screen(route = "cv_screen")
     object Info : Screen(route = "info_screen")

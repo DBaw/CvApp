@@ -22,14 +22,14 @@ fun BottomNavigationBar(
     onItemClick: (BottomNavItem) -> Unit
 ) {
     val backStackEntry = navController.currentBackStackEntryAsState()
+    val cvScreens = listOf(Screen.Info.route,Screen.Education.route,Screen.Experience.route,Screen.Interests.route,Screen.Contact.route)
+
     CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
         BottomNavigation(
             backgroundColor = MaterialTheme.colors.surface,
         ) {
-            val cvScreens = listOf(Screen.Info.route,Screen.Education.route,Screen.Experience.route,Screen.Interests.route,Screen.Contact.route)
 
             items.forEach { item ->
-                
                 val selected = if(item.route == Screen.Home.route || item.route == Screen.Contact.route)item.route == backStackEntry.value?.destination?.route
                 else item.route == backStackEntry.value?.destination?.route || cvScreens.contains(backStackEntry.value?.destination?.route)
 
@@ -43,7 +43,7 @@ fun BottomNavigationBar(
                             horizontalAlignment = CenterHorizontally,
                             verticalArrangement = SpaceBetween
                         ) {
-                            Icon(painter = item.icon, contentDescription = item.title, modifier = Modifier.size(24.dp))
+                            Icon(imageVector = item.icon, contentDescription = item.title, modifier = Modifier.size(24.dp))
                             if (selected) {
                                 Text(text = item.title)
                             }

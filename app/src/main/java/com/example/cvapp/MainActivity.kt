@@ -5,8 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Article
+import androidx.compose.material.icons.filled.FolderSpecial
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.res.painterResource
 import androidx.navigation.compose.rememberNavController
 import com.example.cvapp.bars.data.BottomNavItem
 import com.example.cvapp.navigation.Screen
@@ -33,17 +36,17 @@ class MainActivity : ComponentActivity() {
                                 BottomNavItem(
                                     title = "CV",
                                     route = Screen.Cv.route,
-                                    icon = painterResource(id = R.drawable.cv)
+                                    icon = Icons.Default.Article
                                 ),
                                 BottomNavItem(
                                     title = "Home",
                                     route = Screen.Home.route,
-                                    icon = painterResource(id = R.drawable.home)
+                                    icon = Icons.Default.Home
                                 ),
                                 BottomNavItem(
-                                    title = "Contact",
-                                    route = Screen.Contact.route,
-                                    icon = painterResource(id = R.drawable.contact)
+                                    title = "Projects",
+                                    route = Screen.Projects.route,
+                                    icon = Icons.Default.FolderSpecial
                                 ),
                             ),
                             navController = navController,

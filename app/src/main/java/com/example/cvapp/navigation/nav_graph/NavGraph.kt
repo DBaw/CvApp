@@ -20,5 +20,6 @@ fun NavGraph(navController: NavHostController) {
         cvNavGraph(navController = navController)
         homeNavGraph()
         contactNavGraph()
+        projectsNavGraph()
     }
 }
