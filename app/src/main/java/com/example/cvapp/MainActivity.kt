@@ -17,6 +17,7 @@ import com.example.cvapp.ui.theme.CvAppTheme
 
 
 class MainActivity : ComponentActivity() {
+    @ExperimentalMaterialApi
     @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

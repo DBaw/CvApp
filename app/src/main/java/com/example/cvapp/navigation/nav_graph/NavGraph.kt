@@ -1,6 +1,7 @@
 package com.example.cvapp
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -8,7 +9,7 @@ import com.example.cvapp.navigation.HOME_GRAPH_ROUTE
 import com.example.cvapp.navigation.NAV_GRAPH_ROUTE
 import com.example.cvapp.navigation.nav_graph.*
 
-
+@ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @Composable
 fun NavGraph(navController: NavHostController) {
