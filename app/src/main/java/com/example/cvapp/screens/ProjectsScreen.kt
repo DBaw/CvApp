@@ -2,8 +2,7 @@ package com.example.cvapp.screens
 
 
 
-import android.content.Intent
-import android.net.Uri
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -12,45 +11,73 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat.startActivity
+import androidx.compose.ui.unit.sp
+import com.example.cvapp.patterns.randomPatternPath
+import com.example.cvapp.ui.theme.BackgroundPattern
 
 
 @ExperimentalMaterialApi
 @Composable
 fun ProjectsScreen() {
-    Box(
-        modifier = Modifier
-            .background(MaterialTheme.colors.background)
-            .fillMaxSize()
-    ){
-        var url = "https://github.com/DBaw/CvApp"
-        Card(
-            modifier = Modifier
-                .padding(15.dp)
-                .defaultMinSize(minHeight = 150.dp)
-                .fillMaxWidth()
-                .align(Alignment.TopCenter),
-            shape = RoundedCornerShape(10.dp),
-            backgroundColor = MaterialTheme.colors.background,
-            elevation = 3.dp,
-            onClick = {}
-        ) {
-            Image(
-                painter = if (isSystemInDarkTheme()) {
-                    painterResource(id = com.example.cvapp.R.drawable.unitconverterdark)
-                } else {
-                    painterResource(id = com.example.cvapp.R.drawable.unitconverterlight)
-                },
-                contentDescription = "Change",
-                contentScale = ContentScale.FillWidth
+    BoxWithConstraints(Modifier.fillMaxSize()
+        .background(MaterialTheme.colors.background)) {
+
+        val width = constraints.maxWidth.toFloat()
+        val height = constraints.maxHeight.toFloat()
+
+        Canvas(modifier = Modifier.fillMaxSize()) {
+            drawPath(
+                path = randomPatternPath(width, height),
+                color = BackgroundPattern
             )
         }
 
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
+            val url = "https://github.com/DBaw/UnitConverter"
+            val uriHandler = LocalUriHandler.current
+
+
+            Text(
+                text = "My Projects",
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 3.sp,
+                modifier = Modifier
+                    .padding(horizontal = 15.dp)
+                    .padding(top = 20.dp, bottom = 5.dp)
+            )
+
+            Card(
+                modifier = Modifier
+                    .padding(15.dp)
+                    .fillMaxWidth(),
+                shape = RoundedCornerShape(10.dp),
+                backgroundColor = MaterialTheme.colors.background,
+                elevation = 3.dp,
+                onClick = { uriHandler.openUri(url) }
+            ) {
+                Image(
+                    painter = if (isSystemInDarkTheme()) {
+                        painterResource(id = com.example.cvapp.R.drawable.unitconverterdark)
+                    } else {
+                        painterResource(id = com.example.cvapp.R.drawable.unitconverterlight)
+                    },
+                    contentDescription = "Units Converter",
+                    contentScale = ContentScale.FillWidth
+                )
+            }
+
+        }
     }
 }
