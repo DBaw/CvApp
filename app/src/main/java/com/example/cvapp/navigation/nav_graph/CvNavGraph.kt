@@ -34,53 +34,53 @@ fun NavGraphBuilder.cvNavGraph(
                     Feature(
                         title = "Info",
                         icon = Icons.Default.Info,
-                        lightColor = LightExpColor,
-                        mediumColor = ExpColor,
-                        darkColor = DarkExpColor,
+                        lightColor = FirstLightFeatureColor,
+                        mediumColor = FirstFeatureColor,
+                        darkColor = FirstDarkFeatureColor,
                         route = Screen.Info.route
                     ),
                         Feature(
                             title = "Experience",
-                            icon = Icons.Default.Work,//painterResource(id = R.drawable.work),
-                            lightColor = LightExpColor,
-                            mediumColor = ExpColor,
-                            darkColor = DarkExpColor,
+                            icon = Icons.Default.Work,
+                            lightColor = FirstLightFeatureColor,
+                            mediumColor = FirstFeatureColor,
+                            darkColor = FirstDarkFeatureColor,
                             route = Screen.Experience.route
                         ),
 
                         Feature(
                             title = "Education",
                             icon = Icons.Default.School,
-                            lightColor = LightSkillColor,
-                            mediumColor = SkillColor,
-                            darkColor = DarkSkillColor,
+                            lightColor = SecondLightFeatureColor,
+                            mediumColor = SecondFeatureColor,
+                            darkColor = SecondDarkFeatureColor,
                             route = Screen.Education.route
                         ),
 
                         Feature(
                             title = "Skills",
                             icon = Icons.Default.Star,
-                            lightColor = LightSkillColor,
-                            mediumColor = SkillColor,
-                            darkColor = DarkSkillColor,
+                            lightColor = SecondLightFeatureColor,
+                            mediumColor = SecondFeatureColor,
+                            darkColor = SecondDarkFeatureColor,
                             route = Screen.Skills.route
                         ),
 
                         Feature(
                             title = "Interests",
                             icon = Icons.Default.Favorite ,
-                            lightColor = LightContactColor,
-                            mediumColor = ContactColor,
-                            darkColor = DarkContactColor,
+                            lightColor = ThirdLightFeatureColor,
+                            mediumColor = ThirdFeatureColor,
+                            darkColor = ThirdDarkFeatureColor,
                             route = Screen.Interests.route
                         ),
 
                         Feature(
                             title = "Contact",
                             icon = Icons.Default.ContactPhone,
-                            lightColor = LightContactColor,
-                            mediumColor = ContactColor,
-                            darkColor = DarkContactColor,
+                            lightColor = ThirdLightFeatureColor,
+                            mediumColor = ThirdFeatureColor,
+                            darkColor = ThirdDarkFeatureColor,
                             route = Screen.Contact.route
                         )
 

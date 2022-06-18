@@ -21,7 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.cvapp.patterns.randomPatternPath
-import com.example.cvapp.ui.theme.BackgroundPattern
+import com.example.cvapp.ui.theme.Paddings
 
 
 @ExperimentalMaterialApi
@@ -32,11 +32,12 @@ fun ProjectsScreen() {
 
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
+        val patternColor = MaterialTheme.colors.secondaryVariant
 
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawPath(
                 path = randomPatternPath(width, height),
-                color = BackgroundPattern
+                color = patternColor
             )
         }
 
@@ -54,13 +55,23 @@ fun ProjectsScreen() {
                 fontWeight = FontWeight.Bold,
                 letterSpacing = 3.sp,
                 modifier = Modifier
-                    .padding(horizontal = 15.dp)
-                    .padding(top = 20.dp, bottom = 5.dp)
+                    .padding(
+                        horizontal = Paddings.Big.padding
+                    )
+                    .padding(
+                        top = Paddings.Big.padding,
+                        bottom = Paddings.Medium.padding
+                    )
             )
 
             Card(
                 modifier = Modifier
-                    .padding(15.dp)
+                    .padding(
+                        horizontal = Paddings.Big.padding
+                    )
+                    .padding(
+                        top = Paddings.Medium.padding
+                    )
                     .fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp),
                 backgroundColor = MaterialTheme.colors.background,
@@ -69,9 +80,9 @@ fun ProjectsScreen() {
             ) {
                 Image(
                     painter = if (isSystemInDarkTheme()) {
-                        painterResource(id = com.example.cvapp.R.drawable.unitconverterdark)
-                    } else {
                         painterResource(id = com.example.cvapp.R.drawable.unitconverterlight)
+                    } else {
+                        painterResource(id = com.example.cvapp.R.drawable.unitconverterdark)
                     },
                     contentDescription = "Units Converter",
                     contentScale = ContentScale.FillWidth

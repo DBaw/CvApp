@@ -13,7 +13,6 @@ import androidx.navigation.NavController
 import com.example.cvapp.patterns.*
 import com.example.cvapp.screens.data.Feature
 import com.example.cvapp.screens.data.FeatureItem
-import com.example.cvapp.ui.theme.BackgroundPattern
 
 
 
@@ -25,12 +24,13 @@ fun CvScreen(navController: NavController, features: List<Feature>) {
 
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
+        val patternColor = MaterialTheme.colors.secondaryVariant
 
 
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawPath(
                 path = randomPatternPath(width,height),
-                color = BackgroundPattern
+                color = patternColor
             )}
 
         LazyVerticalGrid(

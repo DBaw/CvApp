@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.cvSkillsInterestsData
-import com.example.cvapp.ui.theme.BackgroundPattern
 
 @Composable
 fun InterestsScreen(){
@@ -18,11 +17,12 @@ fun InterestsScreen(){
 
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
+        val patternColor = MaterialTheme.colors.secondaryVariant
 
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawPath(
                 path = randomPatternPath(width,height),
-                color = BackgroundPattern
+                color = patternColor
             )}
 
         Column(

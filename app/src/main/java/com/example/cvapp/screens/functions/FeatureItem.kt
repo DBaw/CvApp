@@ -43,12 +43,12 @@ fun FeatureItem(
                 val width = constraints.maxWidth.toFloat()
                 val height = constraints.maxHeight.toFloat()
 
-                //First colored path
-                val firstColorPoint1 = Offset(0f, height * 0.4f)
+
+                val firstColorPoint1 = Offset(0f, height * 0.42f)
                 val firstColorPoint2 = Offset(width * 0.35f, height * 0.25f)
                 val firstColorPoint3 = Offset(width * 0.65f, height * 0.75f)
                 val firstColorPoint4 = Offset(width * 1.55f, 0f)
-                //Second colored path
+
                 val secondColorPoint1 = Offset(0f, height * 0.9f)
                 val secondColorPoint2 = Offset(width * 0.35f, height * 0.4f)
                 val secondColorPoint3 = Offset(width * 0.55f, height * 1.1f)

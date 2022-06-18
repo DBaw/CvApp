@@ -7,10 +7,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.CvInfoData
-import com.example.cvapp.ui.theme.BackgroundPattern
 import com.example.cvapp.ui.theme.Paddings
 
 @Composable
@@ -23,11 +21,12 @@ fun InfoScreen() {
 
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
+        val patternColor = MaterialTheme.colors.secondaryVariant
 
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawPath(
                 path = randomPatternPath(width,height),
-                color = BackgroundPattern
+                color = patternColor
             )}
 
         Column(

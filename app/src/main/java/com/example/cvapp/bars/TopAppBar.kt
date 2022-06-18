@@ -25,6 +25,7 @@ fun TopBar(scaffoldState: ScaffoldState, scope: CoroutineScope, navController: N
     CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
 
         val route = navController.currentBackStackEntryAsState().value?.destination?.route
+        val cvScreens = listOf(Screen.Info.route,Screen.Education.route,Screen.Skills.route,Screen.Experience.route,Screen.Interests.route,Screen.Contact.route)
 
         TopAppBar(
             modifier = Modifier.fillMaxWidth(),
@@ -38,12 +39,7 @@ fun TopBar(scaffoldState: ScaffoldState, scope: CoroutineScope, navController: N
                     .fillMaxWidth()
                     .padding(Paddings.Medium.padding)
             ) {
-                if(route == Screen.Experience.route ||
-                    route == Screen.Info.route ||
-                    route == Screen.Education.route ||
-                    route == Screen.Skills.route ||
-                    route == Screen.Interests.route ||
-                    route == Screen.Contact.route)
+                if(cvScreens.contains(route))
                 Icon(
                     imageVector = Icons.Default.ArrowBack,
                     contentDescription = "Go back",

@@ -4,14 +4,10 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.cvSkillsInterestsData
-import com.example.cvapp.ui.theme.BackgroundPattern
 
 @Composable
 fun SkillsScreen(){
@@ -21,11 +17,12 @@ fun SkillsScreen(){
 
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
+        val patternColor = MaterialTheme.colors.secondaryVariant
 
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawPath(
                 path = randomPatternPath(width,height),
-                color = BackgroundPattern
+                color = patternColor
             )}
 
         Column(
