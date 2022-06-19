@@ -21,7 +21,7 @@ fun InfoScreen() {
 
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
-        val patternColor = MaterialTheme.colors.secondaryVariant
+        val patternColor = MaterialTheme.colors.secondary
 
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawPath(

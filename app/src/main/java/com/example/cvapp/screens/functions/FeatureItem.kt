@@ -95,7 +95,7 @@ fun FeatureItem(
                     fontWeight = MaterialTheme.typography.h6.fontWeight,
                     letterSpacing = MaterialTheme.typography.overline.letterSpacing,
                     fontFamily = MaterialTheme.typography.h6.fontFamily,
-                    color = feature.lightColor,
+                    color = MaterialTheme.colors.secondary,
                     textAlign = TextAlign.Start,
                     modifier = Modifier
                         .padding(start = Paddings.Big.padding)
@@ -109,7 +109,7 @@ fun FeatureItem(
                 Icon(
                     imageVector = feature.icon,
                     contentDescription = feature.title,
-                    tint = feature.darkColor,
+                    tint = MaterialTheme.colors.secondary,
                     modifier = Modifier.padding(Paddings.Medium.padding)
                         .size((height/11).dp)
                         .constrainAs(icon){

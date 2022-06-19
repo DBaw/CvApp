@@ -24,7 +24,7 @@ fun Hyperlinks(
     linkFontWeight: FontWeight = FontWeight.Normal,
     linkDecoration: TextDecoration = TextDecoration.Underline,
     fontSize: TextUnit,
-    textAlign: TextAlign
+    textAlign: TextAlign = TextAlign.Start
     ){
 
     val annotatedString = buildAnnotatedString {

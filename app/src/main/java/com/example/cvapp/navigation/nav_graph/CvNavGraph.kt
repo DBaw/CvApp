@@ -1,6 +1,7 @@
 package com.example.cvapp.navigation.nav_graph
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -34,53 +35,53 @@ fun NavGraphBuilder.cvNavGraph(
                     Feature(
                         title = "Info",
                         icon = Icons.Default.Info,
-                        lightColor = FirstLightFeatureColor,
-                        mediumColor = FirstFeatureColor,
-                        darkColor = FirstDarkFeatureColor,
+                        lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeFirstLightFeatureColor,
+                        mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeFirstFeatureColor,
+                        darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeFirstDarkFeatureColor,
                         route = Screen.Info.route
                     ),
                         Feature(
                             title = "Experience",
                             icon = Icons.Default.Work,
-                            lightColor = FirstLightFeatureColor,
-                            mediumColor = FirstFeatureColor,
-                            darkColor = FirstDarkFeatureColor,
+                            lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeFirstLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeFirstFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeFirstDarkFeatureColor,
                             route = Screen.Experience.route
                         ),
 
                         Feature(
                             title = "Education",
                             icon = Icons.Default.School,
-                            lightColor = SecondLightFeatureColor,
-                            mediumColor = SecondFeatureColor,
-                            darkColor = SecondDarkFeatureColor,
+                            lightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeSecondLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeSecondFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeSecondDarkFeatureColor,
                             route = Screen.Education.route
                         ),
 
                         Feature(
                             title = "Skills",
                             icon = Icons.Default.Star,
-                            lightColor = SecondLightFeatureColor,
-                            mediumColor = SecondFeatureColor,
-                            darkColor = SecondDarkFeatureColor,
+                            lightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeSecondLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeSecondFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeSecondDarkFeatureColor,
                             route = Screen.Skills.route
                         ),
 
                         Feature(
                             title = "Interests",
                             icon = Icons.Default.Favorite ,
-                            lightColor = ThirdLightFeatureColor,
-                            mediumColor = ThirdFeatureColor,
-                            darkColor = ThirdDarkFeatureColor,
+                            lightColor = if(!isSystemInDarkTheme()) LightModeThirdLightFeatureColor else DarkModeThirdLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeThirdFeatureColor else DarkModeThirdFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeThirdDarkFeatureColor else DarkModeThirdDarkFeatureColor,
                             route = Screen.Interests.route
                         ),
 
                         Feature(
                             title = "Contact",
                             icon = Icons.Default.ContactPhone,
-                            lightColor = ThirdLightFeatureColor,
-                            mediumColor = ThirdFeatureColor,
-                            darkColor = ThirdDarkFeatureColor,
+                            lightColor = if(!isSystemInDarkTheme()) LightModeThirdLightFeatureColor else DarkModeThirdLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeThirdFeatureColor else DarkModeThirdFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeThirdDarkFeatureColor else DarkModeThirdDarkFeatureColor,
                             route = Screen.Contact.route
                         )
 

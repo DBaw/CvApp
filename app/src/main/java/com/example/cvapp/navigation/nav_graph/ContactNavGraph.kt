@@ -5,6 +5,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.cvapp.navigation.CONTACT_GRAPH_ROUTE
 import com.example.cvapp.navigation.Screen
+import com.example.cvapp.screens.ContactScreen
 
 fun NavGraphBuilder.contactNavGraph(
 ) {
@@ -15,7 +16,7 @@ fun NavGraphBuilder.contactNavGraph(
         composable(
             route = Screen.Contact.route
         ) {
-
+            ContactScreen()
         }
     }
 }

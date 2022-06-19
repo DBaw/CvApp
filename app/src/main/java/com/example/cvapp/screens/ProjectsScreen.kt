@@ -32,7 +32,7 @@ fun ProjectsScreen() {
 
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
-        val patternColor = MaterialTheme.colors.secondaryVariant
+        val patternColor = MaterialTheme.colors.secondary
 
         Canvas(modifier = Modifier.fillMaxSize()) {
             drawPath(
@@ -50,7 +50,8 @@ fun ProjectsScreen() {
 
 
             Text(
-                text = "My Projects",
+                text = "MY PROJECTS",
+                color = MaterialTheme.colors.primary,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 letterSpacing = 3.sp,

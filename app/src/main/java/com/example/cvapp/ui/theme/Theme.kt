@@ -8,12 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
-    primary = Color.White,
-    primaryVariant = Color(0xFF636060),
-    secondary = Color(0xFFB3B2B1),
-    secondaryVariant = Color(0xFF0E0E0E),
+    primary = Color(0xFFB3AA08),
+    primaryVariant = Color(0xCD7E7704),
+    secondary = Color(0xFF0E0E0E),
     background = Color(0xFF0C0C0C),
-    surface = Color(0xFF141414),
+    surface = Color(0xCD413E04),
     error = Color.Red,
     onPrimary = Color.Black,
     onSecondary = Color.Black,
@@ -23,17 +22,16 @@ private val DarkColorPalette = darkColors(
 )
 
 private val LightColorPalette = lightColors(
-    primary = Color(0xFF3D231C),
-    primaryVariant = Color(0xFF613A2F),
-    secondary = Color(0xFFA8857C),
-    secondaryVariant = Color(0xFFA38981),
-    background = Color(0xFFA78D85),
-    surface = Color(0xFF745549),
+    primary = Color(0xFF021279),
+    primaryVariant = Color(0xCD12228D),
+    secondary = Color(0xFFEBE9E7),
+    background = Color(0xFFF7F5F4),
+    surface = Color(0xFF2138E0),
     error = Color.Red,
     onPrimary = Color.Black,
     onSecondary = Color.White,
     onBackground = Color.Black,
-    onSurface = Color(0xFF553C33),
+    onSurface = Color(0xFF000000),
     onError = Color.White
 )
 
