@@ -101,7 +101,7 @@ fun ContactScreen() {
                 link = listOf("Linkedin"),
                 hyperlinks = listOf("https://www.linkedin.com/in/dominik-bawołek-b7449423b"),
                 textColor = MaterialTheme.colors.primary,
-                linkColor = MaterialTheme.colors.onSurface,
+                linkColor = MaterialTheme.colors.onBackground,
                 fontSize = 22.sp
             )
 

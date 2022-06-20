@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import com.example.cvapp.R
 import com.example.cvapp.patterns.randomPatternPath
-import com.example.cvapp.screens.functions.ExpEdu
+import com.example.cvapp.screens.functions.ExpEduData
 
 @Composable
 fun EducationScreen() {
@@ -54,27 +54,27 @@ fun Edu(place: String, icon: Painter, field: String, specialty: String, level: S
     ) {
 
         Column {
-            ExpEdu(
+            ExpEduData(
                 head = place,
                 icon = icon
             )
-            ExpEdu(
+            ExpEduData(
                 mainText = "Field",
                 description = field
             )
-            ExpEdu(
+            ExpEduData(
                 mainText = "Specialty",
                 description = specialty
             )
-            ExpEdu(
+            ExpEduData(
                 mainText = "Level",
                 description = level
             )
-            ExpEdu(
+            ExpEduData(
                 mainText = "From",
                 description = startDate
             )
-            ExpEdu(
+            ExpEduData(
                 mainText = "To",
                 description = endDate
             )

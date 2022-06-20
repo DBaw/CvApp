@@ -7,7 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.cvapp.patterns.randomPatternPath
-import com.example.cvapp.screens.functions.cvSkillsInterestsData
+import com.example.cvapp.screens.functions.CvSkillsInterestsData
 
 @Composable
 fun InterestsScreen(){
@@ -28,8 +28,11 @@ fun InterestsScreen(){
         Column(
             verticalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxWidth()) {
-            cvSkillsInterestsData(text = "Interests", head = true )
-            cvSkillsInterestsData(text = "Netflix and chill")
+            CvSkillsInterestsData(text = "INTERESTS", head = true )
+            CvSkillsInterestsData(text = "Stand-Up Comedy")
+            CvSkillsInterestsData(text = "Basketball")
+            CvSkillsInterestsData(text = "Gardening")
+            CvSkillsInterestsData(text = "Cooking")
         }
     }
 }

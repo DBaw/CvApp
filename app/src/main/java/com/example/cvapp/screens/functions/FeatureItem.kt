@@ -95,11 +95,13 @@ fun FeatureItem(
                     fontWeight = MaterialTheme.typography.h6.fontWeight,
                     letterSpacing = MaterialTheme.typography.overline.letterSpacing,
                     fontFamily = MaterialTheme.typography.h6.fontFamily,
-                    color = MaterialTheme.colors.secondary,
+                    color = feature.lightColor,
                     textAlign = TextAlign.Start,
                     modifier = Modifier
-                        .padding(start = Paddings.Big.padding)
-                        .padding(vertical = Paddings.Big.padding)
+                        .padding(
+                            vertical = Paddings.Medium.padding,
+                            horizontal = Paddings.Medium.padding
+                        )
                         .constrainAs(text){
                             top.linkTo(parent.top)
                             start.linkTo(parent.start)
@@ -109,7 +111,7 @@ fun FeatureItem(
                 Icon(
                     imageVector = feature.icon,
                     contentDescription = feature.title,
-                    tint = MaterialTheme.colors.secondary,
+                    tint = feature.darkColor,
                     modifier = Modifier.padding(Paddings.Medium.padding)
                         .size((height/11).dp)
                         .constrainAs(icon){

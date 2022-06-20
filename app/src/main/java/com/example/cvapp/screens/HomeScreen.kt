@@ -84,7 +84,7 @@ fun HomeScreen() {
                         "https://developer.android.com/jetpack/compose"
                     ),
                     textColor = MaterialTheme.colors.primary,
-                    linkColor = MaterialTheme.colors.onSurface,
+                    linkColor = MaterialTheme.colors.onBackground,
                     fontSize = 18.sp,
                     modifier = Modifier
                         .padding(

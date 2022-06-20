@@ -7,7 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.cvapp.patterns.randomPatternPath
-import com.example.cvapp.screens.functions.cvSkillsInterestsData
+import com.example.cvapp.screens.functions.CvSkillsInterestsData
 
 @Composable
 fun SkillsScreen(){
@@ -28,18 +28,18 @@ fun SkillsScreen(){
         Column(
             verticalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxWidth()) {
-            cvSkillsInterestsData(text = "Software Skills", head = true)
-            cvSkillsInterestsData(text = "Kotlin")
-            cvSkillsInterestsData(text = "Jetpack Compose")
-            cvSkillsInterestsData(text = "Android Studio")
-            cvSkillsInterestsData(text = "Git")
-            cvSkillsInterestsData(text = "General Skills", head = true)
-            cvSkillsInterestsData(text = "Adobe XD")
-            cvSkillsInterestsData(text = "UI Standards")
-            cvSkillsInterestsData(text = "Jira")
-            cvSkillsInterestsData(text = "Languages", head = true)
-            cvSkillsInterestsData(text = "Polish native")
-            cvSkillsInterestsData(text = "English B2")
+            CvSkillsInterestsData(text = "SOFTWARE SKILLS", head = true)
+            CvSkillsInterestsData(text = "Kotlin")
+            CvSkillsInterestsData(text = "Jetpack Compose")
+            CvSkillsInterestsData(text = "Android Studio")
+            CvSkillsInterestsData(text = "GENERAL SKILLS", head = true)
+            CvSkillsInterestsData(text = "Git")
+            CvSkillsInterestsData(text = "Jira")
+            CvSkillsInterestsData(text = "Adobe XD Basics")
+            CvSkillsInterestsData(text = "UI Standards")
+            CvSkillsInterestsData(text = "LANGUAGES", head = true)
+            CvSkillsInterestsData(text = "Polish native")
+            CvSkillsInterestsData(text = "English B2")
         }
     }
 }

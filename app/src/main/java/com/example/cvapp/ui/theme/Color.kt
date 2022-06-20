@@ -2,26 +2,26 @@ package com.example.cvapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val LightModeFirstLightFeatureColor = Color(0xFF04DFF3)
+val LightModeFirstLightFeatureColor = Color(0xFF5DE5F1)
 val LightModeFirstFeatureColor = Color(0xFF04919E)
-val LightModeFirstDarkFeatureColor = Color(0xFF03565E)
+val LightModeFirstDarkFeatureColor = Color(0xFF024950)
 
-val LightModeSecondLightFeatureColor = Color(0xFF048BF3)
+val LightModeSecondLightFeatureColor = Color(0xFF42A1EB)
 val LightModeSecondFeatureColor = Color(0xFF035799)
-val LightModeSecondDarkFeatureColor = Color(0xFF023C68)
+val LightModeSecondDarkFeatureColor = Color(0xFF03365E)
 
-val LightModeThirdLightFeatureColor = Color(0xFF0440F3)
+val LightModeThirdLightFeatureColor = Color(0xFF1B51F1)
 val LightModeThirdFeatureColor = Color(0xFF02299E)
-val LightModeThirdDarkFeatureColor = Color(0xFF021F75)
+val LightModeThirdDarkFeatureColor = Color(0xFF021C69)
 
-val DarkModeFirstLightFeatureColor = Color(0xFFF7EC8C)
+val DarkModeFirstLightFeatureColor = Color(0xFFFAF1A3)
 val DarkModeFirstFeatureColor = Color(0xFFF8DB48)
-val DarkModeFirstDarkFeatureColor = Color(0xFF917D14)
+val DarkModeFirstDarkFeatureColor = Color(0xFF74640F)
 
-val DarkModeSecondLightFeatureColor = Color(0xFFF7D08C)
+val DarkModeSecondLightFeatureColor = Color(0xFFF7D395)
 val DarkModeSecondFeatureColor = Color(0xFFFFC44F)
-val DarkModeSecondDarkFeatureColor = Color(0xFFAC7D21)
+val DarkModeSecondDarkFeatureColor = Color(0xFF9C721E)
 
-val DarkModeThirdLightFeatureColor = Color(0xFFF7C78C)
+val DarkModeThirdLightFeatureColor = Color(0xFFF8D09E)
 val DarkModeThirdFeatureColor = Color(0xFFFFB04F)
-val DarkModeThirdDarkFeatureColor = Color(0xFFAC6921)
+val DarkModeThirdDarkFeatureColor = Color(0xFF8F5619)

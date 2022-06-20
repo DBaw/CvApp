@@ -30,7 +30,7 @@ fun TopBar(scaffoldState: ScaffoldState, scope: CoroutineScope, navController: N
         TopAppBar(
             modifier = Modifier.fillMaxWidth(),
             backgroundColor = MaterialTheme.colors.surface,
-            contentColor = MaterialTheme.colors.primary
+            contentColor = MaterialTheme.colors.onSurface
         ) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,

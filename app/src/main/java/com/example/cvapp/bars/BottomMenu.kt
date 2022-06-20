@@ -47,7 +47,7 @@ fun BottomNavigationBar(
                     BottomNavigationItem(
                         selected = selected,
                         onClick = { onItemClick(item) },
-                        selectedContentColor = MaterialTheme.colors.primary,
+                        selectedContentColor = MaterialTheme.colors.onSurface,
                         unselectedContentColor = MaterialTheme.colors.primaryVariant,
                         icon = {
                             Column(
