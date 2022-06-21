@@ -20,15 +20,16 @@ import com.example.cvapp.ui.theme.Paddings
 fun CvSkillsInterestsData(text: String, head: Boolean = false){
     Row(
         horizontalArrangement = Arrangement.Start,
-        verticalAlignment = Alignment.Top,
+        verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
     ) {
 
         Text(
             text = text,
-            color = MaterialTheme.colors.onBackground,
-            fontSize = if (!head) MaterialTheme.typography.h6.fontSize else MaterialTheme.typography.h4.fontSize,
-            fontWeight = if (!head) FontWeight.Medium else FontWeight.Bold,
+            color = if (!head) MaterialTheme.colors.primary else MaterialTheme.colors.onBackground,
+            fontSize = if (!head) MaterialTheme.typography.h6.fontSize else MaterialTheme.typography.h5.fontSize,
+            fontFamily = if (!head) MaterialTheme.typography.h4.fontFamily else MaterialTheme.typography.h6.fontFamily,
+            fontWeight = if (!head) FontWeight.Normal else FontWeight.Bold,
             letterSpacing = if (!head) 1.sp else 3.sp,
             modifier = Modifier.padding(
                 horizontal = Paddings.Big.padding

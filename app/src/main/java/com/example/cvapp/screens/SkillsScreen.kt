@@ -4,10 +4,13 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.CvSkillsInterestsData
+import com.example.cvapp.ui.theme.Paddings
 
 @Composable
 fun SkillsScreen(){
@@ -28,11 +31,20 @@ fun SkillsScreen(){
         Column(
             verticalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxWidth()) {
-            CvSkillsInterestsData(text = "SOFTWARE SKILLS", head = true)
+            Text(
+                text = "SKILLS",
+                color = MaterialTheme.colors.onBackground,
+                fontWeight = FontWeight.Bold,
+                fontSize = MaterialTheme.typography.h4.fontSize,
+                modifier = Modifier
+                    .padding(horizontal = Paddings.Big.padding)
+                    .padding(top = Paddings.Big.padding)
+            )
+            CvSkillsInterestsData(text = "SOFTWARE", head = true)
             CvSkillsInterestsData(text = "Kotlin")
             CvSkillsInterestsData(text = "Jetpack Compose")
             CvSkillsInterestsData(text = "Android Studio")
-            CvSkillsInterestsData(text = "GENERAL SKILLS", head = true)
+            CvSkillsInterestsData(text = "GENERAL", head = true)
             CvSkillsInterestsData(text = "Git")
             CvSkillsInterestsData(text = "Jira")
             CvSkillsInterestsData(text = "Adobe XD Basics")

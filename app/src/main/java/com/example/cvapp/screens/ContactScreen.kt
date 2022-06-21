@@ -50,8 +50,8 @@ fun ContactScreen() {
         Column {
             Text(
                 text = "CONTACT",
-                color = MaterialTheme.colors.primary,
-                fontSize = 30.sp,
+                color = MaterialTheme.colors.onBackground,
+                fontSize = MaterialTheme.typography.h4.fontSize,
                 fontWeight = FontWeight.Bold,
                 letterSpacing = 3.sp,
                 modifier = Modifier

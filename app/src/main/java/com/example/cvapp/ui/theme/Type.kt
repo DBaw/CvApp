@@ -13,6 +13,9 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
+    h5 = TextStyle(
+        fontSize = 26.sp
+    ),
     h6 = TextStyle(
         fontSize = 22.sp,
         fontWeight = FontWeight.Bold,

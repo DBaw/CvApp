@@ -44,7 +44,7 @@ fun HomeScreen() {
                 Text(
                     text = "HELLO!",
                     fontWeight = FontWeight.Bold,
-                    fontSize = 30.sp,
+                    fontSize = MaterialTheme.typography.h4.fontSize,
                     letterSpacing = 3.sp,
                     color = MaterialTheme.colors.primary,
                     modifier = Modifier

@@ -7,6 +7,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Unspecified
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -19,28 +21,27 @@ fun ExpEduData(
     description: String? = null,
     head: String? = null,
     icon: Painter? = null,
-    responsibilities: String? = null
+    responsibilities: List<String>? = null
 ) {
     if (responsibilities == null) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    start = if (head != null) Paddings.Big.padding else Paddings.Large.padding,
-                    end = if (head != null) Paddings.Big.padding else Paddings.Large.padding,
-                    top = if (head != null) Paddings.Large.padding else Paddings.Medium.padding,
+                    top = if (head != null) Paddings.Big.padding else Paddings.Medium.padding,
                     bottom = if (head != null) Paddings.Medium.padding else Paddings.Small.padding,
-                ),
+                )
+                .padding(horizontal = if (head != null) Paddings.Big.padding else Paddings.Large.padding),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = head ?: "$mainText :",
+                text = head ?: "$mainText",
                 fontWeight = FontWeight.Bold,
-                fontSize = if (head == null) MaterialTheme.typography.h5.fontSize else MaterialTheme.typography.h4.fontSize,
+                fontSize = if (head == null) MaterialTheme.typography.h6.fontSize else MaterialTheme.typography.h5.fontSize,
                 fontFamily = if (head == null) MaterialTheme.typography.h6.fontFamily else MaterialTheme.typography.h4.fontFamily,
                 letterSpacing = MaterialTheme.typography.body2.letterSpacing,
-                color = MaterialTheme.colors.onBackground,
+                color = MaterialTheme.colors.onBackground
             )
             if (head == null) {
                 if (description != null) {
@@ -48,13 +49,19 @@ fun ExpEduData(
                         text = description,
                         fontWeight = FontWeight.Normal,
                         fontSize = MaterialTheme.typography.h6.fontSize,
-                        color = MaterialTheme.colors.onBackground,
+                        color = MaterialTheme.colors.primary,
                         textAlign = TextAlign.End
                     )
                 }
             } else {
                 if (icon != null) {
-                    Icon(painter = icon, contentDescription = "$head", Modifier.size(40.dp))
+                    Icon(
+                        painter = icon,
+                        contentDescription = head,
+                        Modifier
+                            .size(40.dp),
+                        tint = Unspecified
+                    )
                 }
             }
         }
@@ -62,31 +69,31 @@ fun ExpEduData(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(
-                    start = Paddings.Big.padding,
-                    end = Paddings.Big.padding,
-                    top = Paddings.Large.padding,
-                    bottom = Paddings.Big.padding
-                ),
+                .padding(Paddings.Big.padding),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "Responsibilities :",
+                text = "Responsibilities",
                 fontWeight = FontWeight.Bold,
                 fontSize = MaterialTheme.typography.h5.fontSize,
                 fontFamily = MaterialTheme.typography.h6.fontFamily,
                 letterSpacing = MaterialTheme.typography.body2.letterSpacing,
                 color = MaterialTheme.colors.onBackground,
             )
-            Text(
-                text = responsibilities,
-                fontWeight = FontWeight.Normal,
-                fontSize = MaterialTheme.typography.h6.fontSize,
-                color = MaterialTheme.colors.onBackground,
-                textAlign = TextAlign.Start,
-                modifier = Modifier.padding(vertical = Paddings.Medium.padding, horizontal = Paddings.Big.padding)
-            )
+            responsibilities.forEach {
+                Text(
+                    text = it,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = MaterialTheme.typography.h6.fontSize,
+                    color = MaterialTheme.colors.primary,
+                    textAlign = TextAlign.Start,
+                    modifier = Modifier.padding(
+                        vertical = Paddings.Medium.padding,
+                        horizontal = Paddings.Big.padding
+                    )
+                )
+            }
         }
     }
 }

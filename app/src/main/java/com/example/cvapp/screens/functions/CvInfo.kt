@@ -57,7 +57,7 @@ fun CvInfoData(name: String, data: String) {
                     text = data,
                     fontWeight = FontWeight.Normal,
                     fontSize = MaterialTheme.typography.h6.fontSize,
-                    color = MaterialTheme.colors.onBackground,
+                    color = MaterialTheme.colors.primary,
                     textAlign = TextAlign.End
                 )
 

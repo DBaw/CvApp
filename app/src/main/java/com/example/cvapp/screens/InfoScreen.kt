@@ -4,9 +4,12 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.CvInfoData
 import com.example.cvapp.ui.theme.Paddings
@@ -30,13 +33,24 @@ fun InfoScreen() {
             )}
 
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
+            horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.padding(
                 vertical = Paddings.Big.padding,
                 horizontal = Paddings.Medium.padding
             )
+                .fillMaxWidth()
         ) {
+            Text(
+                text = "INFORMATION",
+                color = MaterialTheme.colors.onBackground,
+                fontWeight = FontWeight.Bold,
+                fontSize = MaterialTheme.typography.h4.fontSize,
+                textAlign = TextAlign.Start,
+                modifier = Modifier
+                    .padding(horizontal = Paddings.Big.padding)
+                    .padding(top = Paddings.Big.padding)
+            )
             CvInfoData(name = "Name", "Dominik")
             CvInfoData(name = "Surname", "Bawołek")
             CvInfoData(name = "Date of birth", "21.01.1995")

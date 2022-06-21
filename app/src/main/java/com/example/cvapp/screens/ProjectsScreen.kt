@@ -51,7 +51,7 @@ fun ProjectsScreen() {
 
             Text(
                 text = "MY PROJECTS",
-                color = MaterialTheme.colors.primary,
+                color = MaterialTheme.colors.onBackground,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 letterSpacing = 3.sp,
