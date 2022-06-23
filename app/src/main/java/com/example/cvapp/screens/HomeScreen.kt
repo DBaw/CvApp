@@ -46,7 +46,7 @@ fun HomeScreen() {
                     fontWeight = FontWeight.Bold,
                     fontSize = MaterialTheme.typography.h4.fontSize,
                     letterSpacing = 3.sp,
-                    color = MaterialTheme.colors.primary,
+                    color = MaterialTheme.colors.onBackground,
                     modifier = Modifier
                         .padding(
                             horizontal = Paddings.Big.padding

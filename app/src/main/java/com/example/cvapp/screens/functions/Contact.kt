@@ -31,7 +31,7 @@ fun Contact(
     ) {
         Text(
             text = contactType,
-            color = MaterialTheme.colors.primary,
+            color = MaterialTheme.colors.onBackground,
             fontSize = 25.sp,
             fontWeight = FontWeight.Bold,
             letterSpacing = 1.sp,

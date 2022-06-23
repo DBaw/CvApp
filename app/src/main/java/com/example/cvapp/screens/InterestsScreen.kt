@@ -7,7 +7,9 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import com.example.cvapp.R
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.CvSkillsInterestsData
 import com.example.cvapp.ui.theme.Paddings
@@ -40,10 +42,26 @@ fun InterestsScreen(){
                     .padding(horizontal = Paddings.Big.padding)
                     .padding(top = Paddings.Big.padding)
             )
-            CvSkillsInterestsData(text = "Stand-Up Comedy")
-            CvSkillsInterestsData(text = "Basketball")
-            CvSkillsInterestsData(text = "Gardening")
-            CvSkillsInterestsData(text = "Cooking")
+            CvSkillsInterestsData(
+                text = "Stand-Up Comedy",
+                image = painterResource(id = R.drawable.comedy),
+                icon = true
+            )
+            CvSkillsInterestsData(
+                text = "Basketball",
+                image = painterResource(id = R.drawable.basketball),
+                icon = true
+            )
+            CvSkillsInterestsData(
+                text = "Gardening",
+                image = painterResource(id = R.drawable.garden),
+                icon = true
+            )
+            CvSkillsInterestsData(
+                text = "Cooking",
+                image = painterResource(id = R.drawable.cooking),
+                icon = true
+            )
         }
     }
 }

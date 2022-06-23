@@ -7,10 +7,12 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.CvSkillsInterestsData
 import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.R
 
 @Composable
 fun SkillsScreen(){
@@ -40,17 +42,47 @@ fun SkillsScreen(){
                     .padding(horizontal = Paddings.Big.padding)
                     .padding(top = Paddings.Big.padding)
             )
-            CvSkillsInterestsData(text = "SOFTWARE", head = true)
-            CvSkillsInterestsData(text = "Kotlin")
-            CvSkillsInterestsData(text = "Jetpack Compose")
-            CvSkillsInterestsData(text = "Android Studio")
-            CvSkillsInterestsData(text = "GENERAL", head = true)
-            CvSkillsInterestsData(text = "Git")
-            CvSkillsInterestsData(text = "Jira")
-            CvSkillsInterestsData(text = "Adobe XD Basics")
-            CvSkillsInterestsData(text = "UI Standards")
-            CvSkillsInterestsData(text = "LANGUAGES", head = true)
-            CvSkillsInterestsData(text = "Polish native")
+            CvSkillsInterestsData(
+                text = "SOFTWARE",
+                head = true
+            )
+            CvSkillsInterestsData(
+                text = "Kotlin",
+                image = painterResource(id = R.drawable.kotlin)
+            )
+            CvSkillsInterestsData(
+                text = "Jetpack Compose",
+                image = painterResource(id = R.drawable.jetpack_compose)
+            )
+            CvSkillsInterestsData(
+                text = "Android Studio",
+                image = painterResource(id = R.drawable.android_studio)
+            )
+            CvSkillsInterestsData(
+                text = "GENERAL",
+                head = true
+            )
+            CvSkillsInterestsData(
+                text = "Gitlab/Github",
+                image = painterResource(id = R.drawable.gitlab)
+            )
+            CvSkillsInterestsData(
+                text = "Jira",
+                image = painterResource(id = R.drawable.jira)
+            )
+            CvSkillsInterestsData(
+                text = "Adobe XD Basics",
+                image = painterResource(id = R.drawable.adobe_xd)
+            )
+            CvSkillsInterestsData(
+                text = "UI Standards",
+                image = painterResource(id = R.drawable.ui)
+            )
+            CvSkillsInterestsData(
+                text = "LANGUAGES",
+                head = true
+            )
+            CvSkillsInterestsData("Polish native")
             CvSkillsInterestsData(text = "English B2")
         }
     }
