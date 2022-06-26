@@ -13,7 +13,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.cvapp.bars.data.BottomNavItem
 import com.example.cvapp.bars.data.NoRippleTheme
-import com.example.cvapp.navigation.Screen
 
 @Composable
 fun BottomNavigationBar(
@@ -22,14 +21,6 @@ fun BottomNavigationBar(
     onItemClick: (BottomNavItem) -> Unit
 ) {
     val backStackEntry = navController.currentBackStackEntryAsState().value?.destination?.route
-    val cvScreens = listOf(
-        Screen.Info.route,
-        Screen.Education.route,
-        Screen.Skills.route,
-        Screen.Experience.route,
-        Screen.Interests.route,
-        Screen.Contact.route
-    )
 
     CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
         CompositionLocalProvider(LocalElevationOverlay provides null) {
@@ -38,9 +29,7 @@ fun BottomNavigationBar(
             ) {
 
                 items.forEach { item ->
-                    val selected =
-                        if (item.route == Screen.Home.route || item.route == Screen.Projects.route) item.route == backStackEntry
-                        else item.route == backStackEntry || cvScreens.contains(backStackEntry)
+                    val selected = item.route == backStackEntry
 
                     BottomNavigationItem(
                         selected = selected,

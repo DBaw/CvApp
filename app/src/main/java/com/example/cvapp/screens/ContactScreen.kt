@@ -1,6 +1,5 @@
 package com.example.cvapp.screens
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -10,10 +9,9 @@ import androidx.compose.material.icons.filled.Mail
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.Contact
 import com.example.cvapp.screens.functions.Hyperlinks
 import com.example.cvapp.ui.theme.padding
@@ -23,20 +21,8 @@ fun ContactScreen() {
     BoxWithConstraints(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background)
+            .background(Color.Transparent)
     ) {
-
-        val context = LocalContext.current
-        val width = constraints.maxWidth.toFloat()
-        val height = constraints.maxHeight.toFloat()
-        val patternColor = MaterialTheme.colors.secondary
-
-        Canvas(modifier = Modifier.fillMaxSize()) {
-            drawPath(
-                path = randomPatternPath(width, height),
-                color = patternColor
-            )
-        }
 
         Column {
             Text(

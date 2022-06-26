@@ -1,7 +1,10 @@
 package com.example.cvapp.screens.functions
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -18,11 +21,11 @@ import com.example.cvapp.ui.theme.padding
 fun CvInfoData(name: String, data: String) {
     Box(
         modifier = Modifier
-            .padding(horizontal = MaterialTheme.padding.big, vertical = MaterialTheme.padding.medium)
             .clip(shape = Shapes.medium)
             .background(Color.Transparent)
     ) {
-        Column() {
+
+        Column {
             Row(
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically,
@@ -48,7 +51,7 @@ fun CvInfoData(name: String, data: String) {
                     .background(Color.Transparent)
                     .fillMaxWidth()
                     .padding(horizontal = MaterialTheme.padding.big)
-                    .padding(top = MaterialTheme.padding.small, bottom = MaterialTheme.padding.medium)
+                    .padding(top = MaterialTheme.padding.big, bottom = MaterialTheme.padding.medium)
             ) {
                 Text(
                     text = data,

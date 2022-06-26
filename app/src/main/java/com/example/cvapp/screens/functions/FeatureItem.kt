@@ -1,5 +1,6 @@
 package com.example.cvapp.screens.data
 
+
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -9,15 +10,13 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.ripple.LocalRippleTheme
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import androidx.navigation.NavController
 import com.example.cvapp.bars.data.NoRippleTheme
 import com.example.cvapp.patterns.data.EdgeStartToEdgeEnd
 import com.example.cvapp.patterns.patternPath
@@ -26,20 +25,21 @@ import com.example.cvapp.ui.theme.padding
 @Composable
 fun FeatureItem(
     feature: Feature,
-    navController: NavController
+    selectedItem: Boolean,
+    title: (String) -> Unit,
+    screen: (String) -> Unit
 ) {
+
     CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
         BoxWithConstraints(
             modifier = Modifier
-                .padding(
-                    vertical = MaterialTheme.padding.big,
-                    horizontal = MaterialTheme.padding.medium
-                )
-                .aspectRatio(1f)
+                .padding(MaterialTheme.padding.medium)
+                .aspectRatio(1.3f)
                 .clip(RoundedCornerShape(10.dp))
-                .background(feature.darkColor)
+                .background(if (selectedItem) feature.selectedDarkColor else feature.darkColor)
                 .clickable {
-                    navController.navigate(feature.route)
+                    screen(feature.route)
+                    title(feature.title)
                 }
         ) {
 
@@ -71,7 +71,7 @@ fun FeatureItem(
                             height = height,
                             startToEnd = EdgeStartToEdgeEnd.LEFTTORIGHT
                         ),
-                        color = feature.mediumColor
+                        color = if (selectedItem)feature.selectedMediumColor else feature.mediumColor
                     )
                     drawPath(
                         path = patternPath(
@@ -85,7 +85,7 @@ fun FeatureItem(
                             height = height,
                             startToEnd = EdgeStartToEdgeEnd.LEFTTORIGHT
                         ),
-                        color = feature.lightColor
+                        color = if (selectedItem)feature.selectedLightColor else feature.lightColor
                     )
                 }
             ConstraintLayout(modifier = Modifier.fillMaxSize()) {
@@ -94,15 +94,15 @@ fun FeatureItem(
 
                 Text(
                     text = feature.title,
-                    fontSize = MaterialTheme.typography.h5.fontSize,
+                    fontSize = MaterialTheme.typography.body2.fontSize,
                     fontWeight = MaterialTheme.typography.h6.fontWeight,
                     letterSpacing = MaterialTheme.typography.overline.letterSpacing,
                     fontFamily = MaterialTheme.typography.h6.fontFamily,
-                    color = feature.lightColor,
+                    color = if (selectedItem)feature.selectedLightColor else feature.lightColor,
                     textAlign = TextAlign.Start,
                     modifier = Modifier
-                        .padding(MaterialTheme.padding.medium)
-                        .constrainAs(text){
+                        .padding(MaterialTheme.padding.small)
+                        .constrainAs(text) {
                             top.linkTo(parent.top)
                             start.linkTo(parent.start)
                         }
@@ -111,10 +111,11 @@ fun FeatureItem(
                 Icon(
                     imageVector = feature.icon,
                     contentDescription = feature.title,
-                    tint = feature.darkColor,
-                    modifier = Modifier.padding(MaterialTheme.padding.medium)
-                        .size((height/11).dp)
-                        .constrainAs(icon){
+                    tint = if (selectedItem)feature.selectedDarkColor else feature.darkColor,
+                    modifier = Modifier
+                        .padding(MaterialTheme.padding.small)
+                        .size((height / 11).dp)
+                        .constrainAs(icon) {
                             bottom.linkTo(parent.bottom)
                             end.linkTo(parent.end)
                         }
@@ -124,4 +125,5 @@ fun FeatureItem(
         }
         }
     }
+
 

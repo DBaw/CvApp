@@ -1,6 +1,5 @@
 package com.example.cvapp.screens
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -12,7 +11,6 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import com.example.cvapp.R
-import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.ExpEduData
 import com.example.cvapp.ui.theme.padding
 
@@ -21,20 +19,10 @@ fun EducationScreen() {
     BoxWithConstraints(
         Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background)
+            .background(Color.Transparent)
     ) {
 
 
-        val width = constraints.maxWidth.toFloat()
-        val height = constraints.maxHeight.toFloat()
-        val patternColor = MaterialTheme.colors.secondary
-
-        Canvas(modifier = Modifier.fillMaxSize()) {
-            drawPath(
-                path = randomPatternPath(width, height),
-                color = patternColor
-            )
-        }
 Column {
     Text(
         text = "EDUCATION",
@@ -54,6 +42,7 @@ Column {
         startDate = "10.2014",
         endDate = "03.2019"
     )
+    Spacer(modifier = Modifier.height(MaterialTheme.padding.doubleLarge))
 }
 
         }

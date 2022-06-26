@@ -2,6 +2,7 @@ package com.example.cvapp.navigation.nav_graph
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.navigation.NavGraphBuilder
@@ -14,8 +15,10 @@ import com.example.cvapp.navigation.CV_GRAPH_ROUTE
 import com.example.cvapp.navigation.Screen
 import com.example.cvapp.screens.*
 import com.example.cvapp.screens.data.Feature
+import com.example.cvapp.screens.data.SelectenScreen
 import com.example.cvapp.ui.theme.*
 
+@ExperimentalMaterialApi
 @ExperimentalFoundationApi
 fun NavGraphBuilder.cvNavGraph(
     navController: NavHostController
@@ -32,54 +35,72 @@ fun NavGraphBuilder.cvNavGraph(
                     Feature(
                         title = "Info",
                         icon = Icons.Default.Info,
-                        lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeFirstLightFeatureColor,
-                        mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeFirstFeatureColor,
-                        darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeFirstDarkFeatureColor,
-                        route = Screen.Info.route
+                        lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeSecondLightFeatureColor,
+                        mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeSecondFeatureColor,
+                        darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeSecondDarkFeatureColor,
+                        selectedLightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeFirstLightFeatureColor,
+                        selectedMediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeFirstFeatureColor,
+                        selectedDarkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeFirstDarkFeatureColor,
+                        route = SelectenScreen.Inf.screen
                     ),
                         Feature(
                             title = "Experience",
                             icon = Icons.Default.Work,
-                            lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeFirstLightFeatureColor,
-                            mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeFirstFeatureColor,
-                            darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeFirstDarkFeatureColor,
-                            route = Screen.Experience.route
+                            lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeSecondLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeSecondFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeSecondDarkFeatureColor,
+                            selectedLightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeFirstLightFeatureColor,
+                            selectedMediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeFirstFeatureColor,
+                            selectedDarkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeFirstDarkFeatureColor,
+                            route = SelectenScreen.Exp.screen
                         ),
 
                         Feature(
                             title = "Education",
                             icon = Icons.Default.School,
-                            lightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeSecondLightFeatureColor,
-                            mediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeSecondFeatureColor,
-                            darkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeSecondDarkFeatureColor,
-                            route = Screen.Education.route
+                            lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeSecondLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeSecondFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeSecondDarkFeatureColor,
+                            selectedLightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeFirstLightFeatureColor,
+                            selectedMediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeFirstFeatureColor,
+                            selectedDarkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeFirstDarkFeatureColor,
+                            route = SelectenScreen.Edu.screen
                         ),
 
                         Feature(
                             title = "Skills",
                             icon = Icons.Default.Star,
-                            lightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeSecondLightFeatureColor,
-                            mediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeSecondFeatureColor,
-                            darkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeSecondDarkFeatureColor,
-                            route = Screen.Skills.route
+                            lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeSecondLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeSecondFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeSecondDarkFeatureColor,
+                            selectedLightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeFirstLightFeatureColor,
+                            selectedMediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeFirstFeatureColor,
+                            selectedDarkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeFirstDarkFeatureColor,
+                            route = SelectenScreen.Skill.screen
                         ),
 
                         Feature(
                             title = "Interests",
                             icon = Icons.Default.Favorite ,
-                            lightColor = if(!isSystemInDarkTheme()) LightModeThirdLightFeatureColor else DarkModeThirdLightFeatureColor,
-                            mediumColor = if(!isSystemInDarkTheme()) LightModeThirdFeatureColor else DarkModeThirdFeatureColor,
-                            darkColor = if(!isSystemInDarkTheme()) LightModeThirdDarkFeatureColor else DarkModeThirdDarkFeatureColor,
-                            route = Screen.Interests.route
+                            lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeSecondLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeSecondFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeSecondDarkFeatureColor,
+                            selectedLightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeFirstLightFeatureColor,
+                            selectedMediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeFirstFeatureColor,
+                            selectedDarkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeFirstDarkFeatureColor,
+                            route = SelectenScreen.Int.screen
                         ),
 
                         Feature(
                             title = "Contact",
                             icon = Icons.Default.ContactPhone,
-                            lightColor = if(!isSystemInDarkTheme()) LightModeThirdLightFeatureColor else DarkModeThirdLightFeatureColor,
-                            mediumColor = if(!isSystemInDarkTheme()) LightModeThirdFeatureColor else DarkModeThirdFeatureColor,
-                            darkColor = if(!isSystemInDarkTheme()) LightModeThirdDarkFeatureColor else DarkModeThirdDarkFeatureColor,
-                            route = Screen.Contact.route
+                            lightColor = if(!isSystemInDarkTheme()) LightModeFirstLightFeatureColor else DarkModeSecondLightFeatureColor,
+                            mediumColor = if(!isSystemInDarkTheme()) LightModeFirstFeatureColor else DarkModeSecondFeatureColor,
+                            darkColor = if(!isSystemInDarkTheme()) LightModeFirstDarkFeatureColor else DarkModeSecondDarkFeatureColor,
+                            selectedLightColor = if(!isSystemInDarkTheme()) LightModeSecondLightFeatureColor else DarkModeFirstLightFeatureColor,
+                            selectedMediumColor = if(!isSystemInDarkTheme()) LightModeSecondFeatureColor else DarkModeFirstFeatureColor,
+                            selectedDarkColor = if(!isSystemInDarkTheme()) LightModeSecondDarkFeatureColor else DarkModeFirstDarkFeatureColor,
+                            route = SelectenScreen.Cont.screen
                         )
 
             ))
