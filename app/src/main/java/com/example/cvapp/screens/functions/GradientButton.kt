@@ -11,8 +11,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.cvapp.ui.theme.Paddings
 import com.example.cvapp.ui.theme.Shapes
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun GradientButton(
@@ -31,7 +31,7 @@ fun GradientButton(
         Row(modifier = Modifier
             .background(gradient)
             //.border(border = BorderStroke(width = 0.7.dp, color = MaterialTheme.colors.primaryVariant), shape = Shapes.large)
-            .padding(horizontal = Paddings.Big.padding, vertical = Paddings.Medium.padding)
+            .padding(horizontal = MaterialTheme.padding.big, vertical = MaterialTheme.padding.medium)
             .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically){

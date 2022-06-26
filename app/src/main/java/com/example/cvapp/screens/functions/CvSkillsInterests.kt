@@ -1,7 +1,6 @@
 package com.example.cvapp.screens.functions
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -11,19 +10,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun CvSkillsInterestsData(text: String, image: Painter ?= null, icon: Boolean = false, head: Boolean = false) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.fillMaxWidth().padding(horizontal = Paddings.Big.padding)
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = MaterialTheme.padding.big)
     ) {
 
         Text(
@@ -35,8 +34,8 @@ fun CvSkillsInterestsData(text: String, image: Painter ?= null, icon: Boolean = 
             letterSpacing = if (!head) 1.sp else 3.sp,
             modifier = Modifier
                 .padding(
-                    top = if (!head) Paddings.Small.padding else Paddings.Big.padding,
-                    bottom = if (!head) Paddings.Medium.padding else Paddings.Medium.padding
+                    top = if (!head) MaterialTheme.padding.small else MaterialTheme.padding.big,
+                    bottom = MaterialTheme.padding.medium
                 )
         )
         if (image != null) {

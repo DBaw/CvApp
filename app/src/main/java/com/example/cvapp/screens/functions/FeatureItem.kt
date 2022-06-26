@@ -21,7 +21,7 @@ import androidx.navigation.NavController
 import com.example.cvapp.bars.data.NoRippleTheme
 import com.example.cvapp.patterns.data.EdgeStartToEdgeEnd
 import com.example.cvapp.patterns.patternPath
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun FeatureItem(
@@ -31,7 +31,10 @@ fun FeatureItem(
     CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
         BoxWithConstraints(
             modifier = Modifier
-                .padding(vertical = Paddings.Big.padding, horizontal = Paddings.Medium.padding)
+                .padding(
+                    vertical = MaterialTheme.padding.big,
+                    horizontal = MaterialTheme.padding.medium
+                )
                 .aspectRatio(1f)
                 .clip(RoundedCornerShape(10.dp))
                 .background(feature.darkColor)
@@ -98,10 +101,7 @@ fun FeatureItem(
                     color = feature.lightColor,
                     textAlign = TextAlign.Start,
                     modifier = Modifier
-                        .padding(
-                            vertical = Paddings.Medium.padding,
-                            horizontal = Paddings.Medium.padding
-                        )
+                        .padding(MaterialTheme.padding.medium)
                         .constrainAs(text){
                             top.linkTo(parent.top)
                             start.linkTo(parent.start)
@@ -112,7 +112,7 @@ fun FeatureItem(
                     imageVector = feature.icon,
                     contentDescription = feature.title,
                     tint = feature.darkColor,
-                    modifier = Modifier.padding(Paddings.Medium.padding)
+                    modifier = Modifier.padding(MaterialTheme.padding.medium)
                         .size((height/11).dp)
                         .constrainAs(icon){
                             bottom.linkTo(parent.bottom)

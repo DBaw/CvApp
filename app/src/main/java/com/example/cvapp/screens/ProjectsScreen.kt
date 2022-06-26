@@ -21,7 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.cvapp.patterns.randomPatternPath
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 
 
 @ExperimentalMaterialApi
@@ -57,21 +57,21 @@ fun ProjectsScreen() {
                 letterSpacing = 3.sp,
                 modifier = Modifier
                     .padding(
-                        horizontal = Paddings.Big.padding
+                        horizontal = MaterialTheme.padding.big
                     )
                     .padding(
-                        top = Paddings.Big.padding,
-                        bottom = Paddings.Medium.padding
+                        top = MaterialTheme.padding.big,
+                        bottom = MaterialTheme.padding.medium
                     )
             )
 
             Card(
                 modifier = Modifier
                     .padding(
-                        horizontal = Paddings.Big.padding
+                        horizontal = MaterialTheme.padding.big
                     )
                     .padding(
-                        top = Paddings.Medium.padding
+                        top = MaterialTheme.padding.medium
                     )
                     .fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp),

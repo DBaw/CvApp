@@ -1,31 +1,22 @@
 package com.example.cvapp.screens
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.ClickableText
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Mail
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat.startActivity
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.Contact
 import com.example.cvapp.screens.functions.Hyperlinks
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun ContactScreen() {
@@ -56,22 +47,22 @@ fun ContactScreen() {
                 letterSpacing = 3.sp,
                 modifier = Modifier
                     .padding(
-                        horizontal = Paddings.Big.padding
+                        horizontal = MaterialTheme.padding.big
                     )
                     .padding(
-                        top = Paddings.Big.padding,
-                        bottom = Paddings.Medium.padding
+                        top = MaterialTheme.padding.big,
+                        bottom = MaterialTheme.padding.medium
                     )
             )
             Contact(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(
-                        horizontal = Paddings.Big.padding
+                        horizontal = MaterialTheme.padding.big
                     )
                     .padding(
-                        top = Paddings.Big.padding,
-                        bottom = Paddings.Medium.padding
+                        top = MaterialTheme.padding.big,
+                        bottom = MaterialTheme.padding.medium
                     ),
                 contactType = "Phone",
                 contact = "505 294 567",
@@ -81,8 +72,8 @@ fun ContactScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(
-                        horizontal = Paddings.Big.padding,
-                        vertical = Paddings.Medium.padding
+                        horizontal = MaterialTheme.padding.big,
+                        vertical = MaterialTheme.padding.medium
                     ),
                 contactType = "E-Mail",
                 typeWeight = 3f,
@@ -94,8 +85,8 @@ fun ContactScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(
-                        horizontal = Paddings.Big.padding,
-                        vertical = Paddings.Medium.padding
+                        horizontal = MaterialTheme.padding.big,
+                        vertical = MaterialTheme.padding.medium
                     ),
                 text = "You can also find me on Linkedin",
                 link = listOf("Linkedin"),

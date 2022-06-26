@@ -8,20 +8,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.example.cvapp.ui.theme.Paddings
 import com.example.cvapp.ui.theme.Shapes
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun CvInfoData(name: String, data: String) {
     Box(
         modifier = Modifier
-            .padding(horizontal = Paddings.Big.padding, vertical = Paddings.Medium.padding)
+            .padding(horizontal = MaterialTheme.padding.big, vertical = MaterialTheme.padding.medium)
             .clip(shape = Shapes.medium)
             .background(Color.Transparent)
     ) {
@@ -32,8 +29,8 @@ fun CvInfoData(name: String, data: String) {
                 modifier = Modifier
                     .background(Color.Transparent)
                     .fillMaxWidth()
-                    .padding(horizontal = Paddings.Big.padding)
-                    .padding(top = Paddings.Medium.padding, bottom = Paddings.Small.padding)
+                    .padding(horizontal = MaterialTheme.padding.big)
+                    .padding(top = MaterialTheme.padding.medium, bottom = MaterialTheme.padding.small)
             ) {
                 Text(
                     text = "$name :",
@@ -50,8 +47,8 @@ fun CvInfoData(name: String, data: String) {
                 modifier = Modifier
                     .background(Color.Transparent)
                     .fillMaxWidth()
-                    .padding(horizontal = Paddings.Big.padding)
-                    .padding(top = Paddings.Small.padding, bottom = Paddings.Medium.padding)
+                    .padding(horizontal = MaterialTheme.padding.big)
+                    .padding(top = MaterialTheme.padding.small, bottom = MaterialTheme.padding.medium)
             ) {
                 Text(
                     text = data,

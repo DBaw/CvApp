@@ -12,7 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import com.example.cvapp.R
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.CvSkillsInterestsData
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun InterestsScreen(){
@@ -39,8 +39,8 @@ fun InterestsScreen(){
                 fontWeight = FontWeight.Bold,
                 fontSize = MaterialTheme.typography.h4.fontSize,
                 modifier = Modifier
-                    .padding(horizontal = Paddings.Big.padding)
-                    .padding(top = Paddings.Big.padding)
+                    .padding(horizontal = MaterialTheme.padding.big)
+                    .padding(top = MaterialTheme.padding.big)
             )
             CvSkillsInterestsData(
                 text = "Stand-Up Comedy",

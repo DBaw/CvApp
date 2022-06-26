@@ -7,13 +7,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Unspecified
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun ExpEduData(
@@ -28,10 +27,10 @@ fun ExpEduData(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    top = if (head != null) Paddings.Big.padding else Paddings.Medium.padding,
-                    bottom = if (head != null) Paddings.Medium.padding else Paddings.Small.padding,
+                    top = if (head != null) MaterialTheme.padding.big else MaterialTheme.padding.medium,
+                    bottom = if (head != null) MaterialTheme.padding.medium else MaterialTheme.padding.small,
                 )
-                .padding(horizontal = if (head != null) Paddings.Big.padding else Paddings.Large.padding),
+                .padding(horizontal = if (head != null) MaterialTheme.padding.big else MaterialTheme.padding.large),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -69,7 +68,7 @@ fun ExpEduData(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(Paddings.Big.padding),
+                .padding(MaterialTheme.padding.big),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
@@ -89,8 +88,8 @@ fun ExpEduData(
                     color = MaterialTheme.colors.primary,
                     textAlign = TextAlign.Start,
                     modifier = Modifier.padding(
-                        vertical = Paddings.Medium.padding,
-                        horizontal = Paddings.Big.padding
+                        vertical = MaterialTheme.padding.medium,
+                        horizontal = MaterialTheme.padding.big
                     )
                 )
             }

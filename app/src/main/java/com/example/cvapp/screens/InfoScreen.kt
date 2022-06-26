@@ -12,7 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.CvInfoData
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun InfoScreen() {
@@ -36,8 +36,8 @@ fun InfoScreen() {
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.padding(
-                vertical = Paddings.Big.padding,
-                horizontal = Paddings.Medium.padding
+                vertical = MaterialTheme.padding.big,
+                horizontal = MaterialTheme.padding.medium
             )
                 .fillMaxWidth()
         ) {
@@ -48,8 +48,8 @@ fun InfoScreen() {
                 fontSize = MaterialTheme.typography.h4.fontSize,
                 textAlign = TextAlign.Start,
                 modifier = Modifier
-                    .padding(horizontal = Paddings.Big.padding)
-                    .padding(top = Paddings.Big.padding)
+                    .padding(horizontal = MaterialTheme.padding.big)
+                    .padding(top = MaterialTheme.padding.big)
             )
             CvInfoData(name = "Name", "Dominik")
             CvInfoData(name = "Surname", "Bawołek")

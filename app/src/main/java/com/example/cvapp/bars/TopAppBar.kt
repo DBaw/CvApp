@@ -10,15 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.cvapp.bars.data.NoRippleTheme
 import com.example.cvapp.navigation.Screen
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Composable
 fun TopBar(scaffoldState: ScaffoldState, scope: CoroutineScope, navController: NavController){
@@ -37,7 +35,7 @@ fun TopBar(scaffoldState: ScaffoldState, scope: CoroutineScope, navController: N
                 horizontalArrangement = Arrangement.End,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(Paddings.Medium.padding)
+                    .padding(MaterialTheme.padding.medium)
             ) {
                 if(cvScreens.contains(route))
                 Icon(

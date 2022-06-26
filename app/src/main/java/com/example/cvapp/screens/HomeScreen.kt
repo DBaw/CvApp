@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.cvapp.patterns.randomPatternPath
 import com.example.cvapp.screens.functions.Hyperlinks
-import com.example.cvapp.ui.theme.Paddings
+import com.example.cvapp.ui.theme.padding
 
 @Composable
 fun HomeScreen() {
@@ -49,11 +49,11 @@ fun HomeScreen() {
                     color = MaterialTheme.colors.onBackground,
                     modifier = Modifier
                         .padding(
-                            horizontal = Paddings.Big.padding
+                            horizontal = MaterialTheme.padding.big
                         )
                         .padding(
-                            top = Paddings.Big.padding,
-                            bottom = Paddings.Medium.padding
+                            top = MaterialTheme.padding.big,
+                            bottom = MaterialTheme.padding.medium
                         )
                         .constrainAs(header) {
                             top.linkTo(parent.top)
@@ -66,7 +66,7 @@ fun HomeScreen() {
                     fontSize = 22.sp,
                     color = MaterialTheme.colors.primary,
                     modifier = Modifier
-                        .padding(horizontal = Paddings.Big.padding)
+                        .padding(horizontal = MaterialTheme.padding.big)
                         .constrainAs(text) {
                             top.linkTo(header.bottom)
                             start.linkTo(parent.start)
@@ -87,10 +87,7 @@ fun HomeScreen() {
                     linkColor = MaterialTheme.colors.onBackground,
                     fontSize = 18.sp,
                     modifier = Modifier
-                        .padding(
-                            horizontal = Paddings.Big.padding,
-                            vertical = Paddings.Big.padding
-                        )
+                        .padding(MaterialTheme.padding.big)
                         .constrainAs(hyperlink) {
                             bottom.linkTo(spacer.top)
                             end.linkTo(parent.end)
