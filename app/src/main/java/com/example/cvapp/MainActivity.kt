@@ -1,16 +1,16 @@
 package com.example.cvapp
 
-
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Article
 import androidx.compose.material.icons.filled.FolderSpecial
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.compose.rememberNavController
 import com.example.cvapp.bars.data.BottomNavItem
 import com.example.cvapp.navigation.Screen
@@ -24,9 +24,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CvAppTheme() {
+
+                if(isSystemInDarkTheme()){
+                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+                }
+
                 val navController = rememberNavController()
                 val scaffoldState = rememberScaffoldState()
-                val scope = rememberCoroutineScope()
 
                 Scaffold(
 
@@ -56,8 +60,7 @@ class MainActivity : ComponentActivity() {
                                     navController.navigate(it.route)
                             }
                         )
-                    },
-                    topBar = { TopBar(scaffoldState,scope,navController)}
+                    }
                 ) {
                     NavGraph(navController = navController)
                 }

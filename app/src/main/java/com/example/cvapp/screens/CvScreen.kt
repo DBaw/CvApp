@@ -40,7 +40,7 @@ fun CvScreen(navController: NavController, features: List<Feature>) {
         selected = screens == title
 
         val scrollState = rememberScrollState()
-        val navHeight = maxHeight/3
+        val navHeight = maxWidth/1.8f
         val width = constraints.maxWidth.toFloat()
         val height = constraints.maxHeight.toFloat()
         val patternColor = MaterialTheme.colors.secondary
