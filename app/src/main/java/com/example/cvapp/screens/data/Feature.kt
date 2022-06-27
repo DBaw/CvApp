@@ -9,8 +9,8 @@ data class Feature(
     val selectedLightColor: Color,
     val selectedMediumColor: Color,
     val selectedDarkColor: Color,
-    val lightColor: Color,
-    val mediumColor: Color,
-    val darkColor: Color,
+    val unselectedLightColor: Color,
+    val unselectedMediumColor: Color,
+    val unselectedDarkColor: Color,
     val route: String
 )

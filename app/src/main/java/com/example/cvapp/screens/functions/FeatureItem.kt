@@ -36,7 +36,7 @@ fun FeatureItem(
                 .padding(MaterialTheme.padding.medium)
                 .aspectRatio(1.3f)
                 .clip(RoundedCornerShape(10.dp))
-                .background(if (selectedItem) feature.selectedDarkColor else feature.darkColor)
+                .background(if (selectedItem) feature.selectedDarkColor else feature.unselectedDarkColor)
                 .clickable {
                     screen(feature.route)
                     title(feature.title)
@@ -71,7 +71,7 @@ fun FeatureItem(
                             height = height,
                             startToEnd = EdgeStartToEdgeEnd.LEFTTORIGHT
                         ),
-                        color = if (selectedItem)feature.selectedMediumColor else feature.mediumColor
+                        color = if (selectedItem)feature.selectedMediumColor else feature.unselectedMediumColor
                     )
                     drawPath(
                         path = patternPath(
@@ -85,7 +85,7 @@ fun FeatureItem(
                             height = height,
                             startToEnd = EdgeStartToEdgeEnd.LEFTTORIGHT
                         ),
-                        color = if (selectedItem)feature.selectedLightColor else feature.lightColor
+                        color = if (selectedItem)feature.selectedLightColor else feature.unselectedLightColor
                     )
                 }
             ConstraintLayout(modifier = Modifier.fillMaxSize()) {
@@ -98,7 +98,7 @@ fun FeatureItem(
                     fontWeight = MaterialTheme.typography.h6.fontWeight,
                     letterSpacing = MaterialTheme.typography.overline.letterSpacing,
                     fontFamily = MaterialTheme.typography.h6.fontFamily,
-                    color = if (selectedItem)feature.selectedLightColor else feature.lightColor,
+                    color = if (selectedItem)feature.selectedLightColor else feature.unselectedLightColor,
                     textAlign = TextAlign.Start,
                     modifier = Modifier
                         .padding(MaterialTheme.padding.small)
@@ -111,7 +111,7 @@ fun FeatureItem(
                 Icon(
                     imageVector = feature.icon,
                     contentDescription = feature.title,
-                    tint = if (selectedItem)feature.selectedDarkColor else feature.darkColor,
+                    tint = if (selectedItem)feature.selectedDarkColor else feature.unselectedDarkColor,
                     modifier = Modifier
                         .padding(MaterialTheme.padding.small)
                         .size((height / 11).dp)
